@@ -67,3 +67,45 @@
   padding: $padding-small $padding-large 0 $padding-large;
   text-align: center;
 }
+
+.w3-container {
+  position: relative;
+  width: 50%;
+}
+
+.w3-image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.w3-middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.w3-container:hover .w3-image {
+  -webkit-filter: grayscale(100%) brightness(50%);
+   -moz-filter: grayscale(100%) brightness(50%);
+   filter: grayscale(100%) brightness(50%);
+}
+
+.w3-container:hover .w3-middle {
+  opacity: 1;
+}
+
+.w3-text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
