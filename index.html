@@ -8,15 +8,15 @@ layout: default
   style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
     {{ site.theme_settings.header_text }}
     <h6>Feel free to play with my face down below, and if you like it, scroll further to see how I did it. If you think you can put my skills to good use, why not <a href="{{ site.baseurl }}/contact">reach out</a>?</h6>
-  @@
+  @@@
   </div>
   {% endif %}
 
-  <div class="work">
+  <div class="work row">
     <h2>My Work</h2>
     {% for project in site.portfolio %}
         <li>
-          <div class="w3-container">
+          <div class="w3-container col-sm-4">
             <img class="w3-image" src="{{ project.thumbnail-path }}" alt="{{ project.title }}">
             <div class="w3-middle">
               <h4 style="color: white;">{{ project.title }}</h4>
