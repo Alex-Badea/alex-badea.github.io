@@ -12,7 +12,7 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <h3>Software developer with a passion for Computer Graphics, Machine Learning and everything in between (like Computer Vision)</h3>
+     <h3>Software developer with a passion for Computer Graphics, Machine Learning and everything in between</h3>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/type-theme/">Type Theme</a>
