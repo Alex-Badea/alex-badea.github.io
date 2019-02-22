@@ -8,7 +8,7 @@ layout: default
   style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
     {{ site.theme_settings.header_text }}
     <h6>Feel free to play with my face down below, and if you like it, scroll further to see how I did it. If you think you can put my skills to good use, why not <a href="{{ site.baseurl }}/contact">reach out</a>?</h6>
-  @
+  @@
   </div>
   {% endif %}
 
@@ -19,8 +19,8 @@ layout: default
           <div class="w3-container">
             <img class="w3-image" src="{{ project.thumbnail-path }}" alt="{{ project.title }}">
             <div class="w3-middle">
-              <a class="fa fa-book fa-2x" href="{{ project.url }}" style="display: inline; color: white; margin: 0 10px;"></a>
-              <a class="fa fa-github fa-2x padding-md" href="{{ project.host }}" style="display: inline; color: white;"></a>
+              <a class="fa fa-book fa-2x" href="{{ project.url }}" style="display: inline; color: white; margin-right: 10px;"></a>
+              <a class="fa fa-github fa-2x padding-md" href="{{ project.host }}" style="display: inline; color: white;  margin-left: 10px;"></a>
             </div>
           </div>
           <p>{{ project.short-description }}</p>
