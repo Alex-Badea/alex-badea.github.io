@@ -11,8 +11,9 @@ layout: default
   @@
   </div>
   {% endif %}
-  <div class="work w3-grid-container" style="white-space:nowrap;">
+  <div class="work" style="white-space:nowrap;">
     <h2>My Work</h2>
+    <div class="w3-grid-container">
     {% for project in site.portfolio %}
         <div class="w3-grid-item">
           <div class="w3-container">
@@ -25,4 +26,5 @@ layout: default
           </div>
         </div>
     {% endfor %}
+    </div>
   </div>
