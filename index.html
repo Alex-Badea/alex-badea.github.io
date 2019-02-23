@@ -8,14 +8,16 @@ layout: default
   style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
     {{ site.theme_settings.header_text }}
     <h6>Feel free to play with my face down below, and if you like it, scroll further to see how I did it. If you think you can put my skills to good use, why not <a href="{{ site.baseurl }}/contact">reach out</a>?</h6>
-  @@@@
+  @
   </div>
   {% endif %}
 
   <div class="work">
     <h2>My Work</h2>
     {% for project in site.portfolio %}
-        <!--li>
+        <li>
+          {% assign imod3 = forloop.index | modulo: 3 %}
+          {% if imod3 == 0 %}<br>{% endif %}
           <div class="w3-container">
             <img class="w3-image" src="{{ project.thumbnail-path }}" alt="{{ project.title }}">
             <div class="w3-middle">
@@ -24,14 +26,6 @@ layout: default
               <a class="fa fa-github fa-2x padding-md" href="{{ project.host }}" style="display: inline; color: white;  margin-left: 10px;"></a>
             </div>
           </div>
-        </li-->
-        <div class="col-sm-4">
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="{{ project.thumbnail-path }}">
-            <div class="card-block">
-              <h4 class="card-title">{{ project.title }}</h4>
-            </div>
-          </div>
-        </div>
+        </li>
     {% endfor %}
   </div>
