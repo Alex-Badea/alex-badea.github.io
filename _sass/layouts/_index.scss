@@ -39,7 +39,7 @@
   h2 {
     text-align: center;
   }
-  @extend %padding-regular;
+  //@extend %padding-regular;
   background-size: $feature-image-size;
   border-bottom: 1px solid $border-color;
   li {
