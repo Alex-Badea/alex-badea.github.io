@@ -13,7 +13,7 @@ layout: default
   {% endif %}
   <div class="work" style="white-space:nowrap;">
     <h3 style="text-align: center">My Work</h3>
-    <div class="w3-grid-container">
+    <div class="w3-grid-container" style="width: 50%">
     {% for project in site.portfolio %}
         <div class="w3-grid-item">
           <div class="w3-container">
@@ -21,7 +21,7 @@ layout: default
             <div class="w3-middle">
               <h5 style="color: white;">{{ project.title }}</h5>
               <a class="fa fa-book" href="{{ project.url }}" style="display: inline; color: white; margin-right: 10px;"></a>
-              <a class="fa fa-github padding-md" href="{{ project.host }}" style="display: inline; color: white;  margin-left: 10px;"></a>
+              <a class="fa fa-github" href="{{ project.host }}" style="display: inline; color: white;  margin-left: 10px;"></a>
             </div>
           </div>
         </div>
