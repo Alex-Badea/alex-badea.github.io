@@ -95,7 +95,7 @@ class Scene {
 		this.gl.blendEquation(this.gl.FUNC_ADD);		
 		this.gl.blendFunc(this.gl.SRC_ALPHA, this.gl.ONE_MINUS_SRC_ALPHA);
 		this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
-		this.gl.lineWidth(12);
+		//this.gl.lineWidth(12);
 		
 		// Per Scene:
 		const projectionMatrix = mat4.perspective(mat4.create(), glMatrix.toRadian(this.fov), this.aspect, this.zNear, this.zFar);
