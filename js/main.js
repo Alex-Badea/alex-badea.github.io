@@ -25,7 +25,7 @@ window.onload = () => {
 	const canvas = document.getElementById("glCanvas");
 	const gl = canvas.getContext("webgl", {preserveDrawingBuffer: true});
 	if (!gl) throw Error("Unable to initialize WebGL. Your browser or machine may not support it.");
-	const scene = new Scene(gl, {unlockRoll: true});
+	const scene = new Scene(gl, {unlockRoll: false});
 	const World = new CoordSystem("World", [vec3.fromValues(1, 0, 0), vec3.fromValues(0, 1, 0), vec3.fromValues(0, 0, 1)], mat4.create());
 	scene.insert(World);
 	scene.render();
