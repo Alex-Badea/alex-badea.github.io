@@ -114,7 +114,7 @@
 .w3-grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196F3;
+  //background-color: #2196F3;
   padding: 10px; 
 }
 
@@ -126,6 +126,12 @@
   text-align: center;
 }
 
+.w3-middle h5 {
+  color: white; 
+  font-size: 1.7vw;
+}
+
 @media only screen and (max-width: 768px) {
   .w3-grid-container {grid-template-columns: auto auto;}
+  .w3-middle h5 {font-size: 2.5vw;}
 }
