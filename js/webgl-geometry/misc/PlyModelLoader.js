@@ -4,7 +4,7 @@ class PlyModelLoader {
 		let texInputId;
 		let onLoad;
 		if (arguments.length == 2) {
-			plyInputId = arguments[0];
+			plyInputUrl = arguments[0];
 			onLoad = arguments[1];
 		} else {
 			plyInputId = arguments[0];
