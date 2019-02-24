@@ -1,6 +1,6 @@
 class PlyModelLoader {
 	constructor(...varargs) {
-		let plyInputId;
+		let plyInputUrl;
 		let texInputId;
 		let onLoad;
 		if (arguments.length == 2) {
@@ -12,10 +12,10 @@ class PlyModelLoader {
 			onLoad = arguments[2];
 		}
 
-		const plyInput = document.getElementById(plyInputId);
-		const fr = new FileReader();
-		fr.onload = e => {
-			const [header, content] = e.target.result.split("end_header").map(e => e.trim());
+		const req = new XMLHttpRequest();
+		req.open("GET", plyInputUrl);
+		req.onload = e => {
+			const [header, content] = e.target.response.split("end_header").map(e => e.trim());
 			const headerLineTokens = header.split(/\r\n|\n\r|\n/);
 
 			const elements = headerLineTokens.filter(e => e.split(/[ ]+/)[0] === "element");
@@ -34,7 +34,7 @@ class PlyModelLoader {
 			indexTable.push(properties.indexOf("nx"));
 			indexTable.push(properties.indexOf("ny"));
 			indexTable.push(properties.indexOf("nz"));
-			indexTable.push(properties.indexOf("red"));
+			indexTable.push(properties.indexOf("red")); 
 			indexTable.push(properties.indexOf("green"));
 			indexTable.push(properties.indexOf("blue"));
 			indexTable.push(properties.indexOf("texture_u"));
@@ -86,6 +86,6 @@ class PlyModelLoader {
 				onLoad({positions, normals, colors, texInfo:{image:null, coords:[]}, faces});
 			}
 		};
-		plyInput.onchange = () => fr.readAsText(plyInput.files[0]);
+		req.send();
 	}
 }
