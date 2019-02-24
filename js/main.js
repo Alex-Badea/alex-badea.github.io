@@ -20,3 +20,12 @@ Array.prototype.forEach.call(elements, function(element) {
      element.parentNode.insertBefore(katexElement, element);
   }
 });
+
+window.onload = () => {
+	const canvas = document.getElementById("glCanvas");
+	const gl = canvas.getContext("webgl", {preserveDrawingBuffer: true});
+	if (!gl) throw Error("Unable to initialize WebGL. Your browser or machine may not support it.");
+	const scene = new Scene(gl, {unlockRoll: true});
+	const World = new CoordSystem("World", [Colors.RED, Colors.GRN, Colors.BLU], mat4.create());
+	scene.insert(World);
+}
