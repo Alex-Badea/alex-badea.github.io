@@ -23,12 +23,12 @@ layout: default
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script src="js/webgl-geometry/Scene.js"></script>
 <script src="js/main.js"></script>
+<canvas id="glCanvas" width="200" height="200" style="border-radius: 50%; border: 1px solid black;"></canvas>
 
 <div class="home">
   {% if site.theme_settings.header_text %}
   <div class="call-out" 
   style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
-    <canvas id="glCanvas" width="200" height="200" style="border-radius: 50%; border: 1px solid black;"></canvas>
     {{ site.theme_settings.header_text }}
     <h6>If you think you can put my skills to good use, why not <a href="{{ site.baseurl }}/contact">reach out</a>?</h6>
   </div>
