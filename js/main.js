@@ -31,7 +31,13 @@ window.onload = () => {
 	scene.render();
 
 	setTimeout(() => {const meshLoader = new PlyModelLoader("https://raw.githubusercontent.com/Alex-Badea/alex-badea.github.io/master/js/mesh.ply", result => {
+    var start = new Date().getTime()
 		World.add(new SpecialDrawableBlueprint(result.positions, [], result.colors, result.texInfo, result.faces));
+    var elapsed = new Date().getTime() - start;
+    console.log("add ", elapsed)
+    var start = new Date().getTime()
 		scene.redraw();
-  	});});
+    var elapsed = new Date().getTime() - start;
+    console.log("redraw ", elapsed)
+  });});
 }
