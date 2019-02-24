@@ -30,8 +30,8 @@ window.onload = () => {
 	scene.insert(World);
 	scene.render();
 
-  const meshLoader = new PlyModelLoader("https://raw.githubusercontent.com/Alex-Badea/alex-badea.github.io/master/js/mesh.ply", result => {
-    Mesh.add(new SpecialDrawableBlueprint(result.positions, [], result.colors, result.texInfo, result.faces));
-    scene.redraw();
-  });
+	const meshLoader = new PlyModelLoader("https://raw.githubusercontent.com/Alex-Badea/alex-badea.github.io/master/js/mesh.ply", result => {
+		World.add(new SpecialDrawableBlueprint(result.positions, [], result.colors, result.texInfo, result.faces));
+		scene.redraw();
+  	});
 }
