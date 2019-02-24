@@ -46,7 +46,7 @@ class Scene {
 				leftDir = vec3.normalize(vec3.create(), vec3.cross(vec3.create(), this.upDir, frontDir));
 				// Se va regenera upDir degenerat?
 				if (this.unlockRoll) 
-					this.upDir = vec3.normalize(vec3.create(), vec3.cross(vec3.create(), frontDir, leftDir));
+					//this.upDir = vec3.normalize(vec3.create(), vec3.cross(vec3.create(), frontDir, leftDir));
 			}
 			lastMousePos = vec2.fromValues(e.clientX, e.clientY);
 		};
