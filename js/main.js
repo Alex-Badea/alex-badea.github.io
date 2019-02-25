@@ -27,7 +27,7 @@ window.onload = () => {
   if (!gl) throw Error("Unable to initialize WebGL. Your browser or machine may not support it.");
   const scene = new Scene(gl, {unlockRoll: false});
 
-  w = new Worker('worker_parseply.js');
+  w = new Worker('https://raw.githubusercontent.com/Alex-Badea/alex-badea.github.io/master/js/worker_parseply.js');
   w.onmessage = e => {
     scene.insert(new SpecialDrawableBlueprint(e.data.positions, e.data.normals, e.data.colors, e.data.texInfo, e.data.faces));
       scene.render();
