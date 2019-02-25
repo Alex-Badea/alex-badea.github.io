@@ -16,11 +16,11 @@ class SpecialDrawableInstance {
 
  		// Legarea tampoanelor
  		this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.buffers.position);
-		this.gl.bufferData(this.gl.ARRAY_BUFFER, new Float32Array(this.drawable.positions.map(e => Array.from(e)).flat()), this.gl.STATIC_DRAW);
+		this.gl.bufferData(this.gl.ARRAY_BUFFER, this.drawable.positions, this.gl.STATIC_DRAW);
 
 		this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.buffers.color);
-		this.gl.bufferData(this.gl.ARRAY_BUFFER, new Float32Array((this.drawable.colors.length ? this.drawable.colors : [...Array(this.drawable.positions.length)].map(e => [Math.random(), Math.random(), Math.random(), Math.random()])).map(e => Array.from(e).concat(1)).flat()), this.gl.STATIC_DRAW);
-		
+		this.gl.bufferData(this.gl.ARRAY_BUFFER, this.drawable.colors.length ? this.drawable.colors : new Float32Array(this.drawable.positions.length), this.gl.STATIC_DRAW);
+
 		this.gl.activeTexture(this.gl.TEXTURE0);
 		this.gl.bindTexture(this.gl.TEXTURE_2D, this.buffers.texture);
 		if (this.drawable.texInfo.image)
@@ -32,13 +32,13 @@ class SpecialDrawableInstance {
        	this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_MIN_FILTER, this.gl.LINEAR);
 
        	this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.buffers.texCoord);
-		this.gl.bufferData(this.gl.ARRAY_BUFFER, new Float32Array((this.drawable.texInfo.coords.length ? this.drawable.texInfo.coords : [...Array(this.drawable.positions.length)].map(e => [Math.random(), Math.random()])).map(e => Array.from(e)).flat()), this.gl.STATIC_DRAW);
-	
+		this.gl.bufferData(this.gl.ARRAY_BUFFER, this.drawable.texInfo.coords.length ? this.drawable.texInfo.coords : new Float32Array(this.drawable.positions.length/3*2), this.gl.STATIC_DRAW);
+
 		if (this.drawable.faces.length != 0) {
 			this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER, this.buffers.index);
 			if (!this.gl.getExtension("OES_element_index_uint"))
 				throw Error("Uint faces not supported");
-			this.gl.bufferData(this.gl.ELEMENT_ARRAY_BUFFER, new Uint32Array(this.drawable.faces.map(e => Array.from(e)).flat()), this.gl.STATIC_DRAW);
+			this.gl.bufferData(this.gl.ELEMENT_ARRAY_BUFFER, this.drawable.faces, this.gl.STATIC_DRAW);
 		}
 
 		// Compilarea shader-elor
@@ -69,7 +69,7 @@ class SpecialDrawableInstance {
 			throw Error("Unimplemented")
 
 		this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.buffers.color);
-		this.gl.vertexAttribPointer(this.currentProgramInfo.attribLocations.vertexColor, 4, this.gl.FLOAT, false, 0, 0);
+		this.gl.vertexAttribPointer(this.currentProgramInfo.attribLocations.vertexColor, 3, this.gl.FLOAT, false, 0, 0);
 		this.gl.enableVertexAttribArray(this.currentProgramInfo.attribLocations.vertexColor);
 
 		this.gl.activeTexture(this.gl.TEXTURE0);
@@ -82,9 +82,9 @@ class SpecialDrawableInstance {
 
 		if (this.buffers.index.length != 0) {
 			this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER, this.buffers.index);
-			this.gl.drawElements(this.gl.TRIANGLES, this.drawable.faces.length*3, this.gl.UNSIGNED_INT, 0);
+			this.gl.drawElements(this.gl.TRIANGLES, this.drawable.faces.length, this.gl.UNSIGNED_INT, 0);
 		} else {
-			this.gl.drawArrays(this.gl.POINTS, 0, this.drawable.positions.length);
+			this.gl.drawArrays(this.gl.POINTS, 0, this.drawable.positions.length/3);
 		}
 	}
 

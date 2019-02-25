@@ -7,7 +7,7 @@ class PlyModelLoader {
 			plyInputUrl = arguments[0];
 			onLoad = arguments[1];
 		} else {
-			plyInputId = arguments[0];
+			plyInputUrl = arguments[0];
 			texInputId = arguments[1];
 			onLoad = arguments[2];
 		}
@@ -49,26 +49,39 @@ class PlyModelLoader {
 			}
 			const hasFaces = !isNaN(facesNo);
 
-			let positions = [];
-			let normals = [];
-			let colors = [];
-			let texCoords = [];
+			let positions = new Float32Array(3*verticesNo);
+			let normals = new Float32Array(3*verticesNo);
+			let colors = new Float32Array(3*verticesNo);
+			let texCoords = new Float32Array(2*verticesNo);
 			for (let i = 0; i < verticesNo; i++) {
-				positions.push([parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[0]]), parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[1]]), parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[2]])]);
-				if (hasNormals)
-					normals.push([parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[3]]), parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[4]]), parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[5]])]);
-				if (hasColors)
-					colors.push([parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[6]])/255.0, parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[7]])/255.0, parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[8]])/255.0]);
-				if (hasTexCoords)
-					texCoords.push([parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[9]]), parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[10]])]);
+				positions[3*i] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[0]]);
+				positions[3*i+1] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[1]]);
+				positions[3*i+2] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[2]]);
+				if (hasNormals) {
+					normals[3*i] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[3]]);
+					normals[3*i+1] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[4]]);
+					normals[3*i+2] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[5]]);
+				}
+				if (hasColors) {
+					colors[3*i] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[6]])/255.0;
+					colors[3*i+1] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[7]])/255.0;
+					colors[3*i+2] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[8]])/255.0;
+				}
+				if (hasTexCoords) {
+					texCoords[2*i] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[9]]);
+					texCoords[2*i+1] = parseFloat(contentLineTokens[i].trim().split(/[ ]+/)[indexTable[10]]);
+				}
 			}
-			let faces = [];
+			let faces = new Uint32Array(facesNo*3);
 			for (let i = 0; i < facesNo; i++) {
 				if (parseInt(contentLineTokens[i+verticesNo].split(/[ ]+/)[0]) !== 3) {
 					throw Error("Non-triangulated faces not supported");
 				}
-				if (hasFaces)
-					faces.push([parseFloat(contentLineTokens[i+verticesNo].split(/[ ]+/)[1]), parseFloat(contentLineTokens[i+verticesNo].split(/[ ]+/)[2]), parseFloat(contentLineTokens[i+verticesNo].split(/[ ]+/)[3])]);
+				if (hasFaces) {
+					faces[3*i] = parseInt(contentLineTokens[i+verticesNo].split(/[ ]+/)[1]);
+					faces[3*i+1] = parseInt(contentLineTokens[i+verticesNo].split(/[ ]+/)[2]);
+					faces[3*i+2] = parseInt(contentLineTokens[i+verticesNo].split(/[ ]+/)[3]);
+				}
 			}
 
 			if (texInputId) {

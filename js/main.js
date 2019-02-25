@@ -23,21 +23,13 @@ Array.prototype.forEach.call(elements, function(element) {
 
 window.onload = () => {
 	const canvas = document.getElementById("glCanvas");
-	const gl = canvas.getContext("webgl", {preserveDrawingBuffer: true});
-	if (!gl) throw Error("Unable to initialize WebGL. Your browser or machine may not support it.");
-	const scene = new Scene(gl, {unlockRoll: false});
-	const World = new CoordSystem("World", [vec3.fromValues(1, 0, 0), vec3.fromValues(0, 1, 0), vec3.fromValues(0, 0, 1)], mat4.create());
-	scene.insert(World);
-	scene.render();
+  const gl = canvas.getContext("webgl", {preserveDrawingBuffer: true});
+  if (!gl) throw Error("Unable to initialize WebGL. Your browser or machine may not support it.");
+  const scene = new Scene(gl, {unlockRoll: false});
 
-	setTimeout(() => {const meshLoader = new PlyModelLoader("https://raw.githubusercontent.com/Alex-Badea/alex-badea.github.io/master/js/mesh.ply", result => {
-    var start = new Date().getTime()
-		World.add(new SpecialDrawableBlueprint(result.positions, [], result.colors, result.texInfo, result.faces));
-    var elapsed = new Date().getTime() - start;
-    console.log("add ", elapsed)
-    var start = new Date().getTime()
-		scene.redraw();
-    var elapsed = new Date().getTime() - start;
-    console.log("redraw ", elapsed)
-  });});
+  w = new Worker('worker_parseply.js');
+  w.onmessage = e => {
+    scene.insert(new SpecialDrawableBlueprint(e.data.positions, e.data.normals, e.data.colors, e.data.texInfo, e.data.faces));
+      scene.render();
+  }
 }
