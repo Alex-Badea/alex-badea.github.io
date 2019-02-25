@@ -23,13 +23,16 @@ Array.prototype.forEach.call(elements, function(element) {
 
 window.onload = () => {
 	const canvas = document.getElementById("glCanvas");
-  const gl = canvas.getContext("webgl", {preserveDrawingBuffer: true});
-  if (!gl) throw Error("Unable to initialize WebGL. Your browser or machine may not support it.");
-  const scene = new Scene(gl, {unlockRoll: false});
-
-  w = new Worker('js/worker_parseply.js');
-  w.onmessage = e => {
-    scene.insert(new SpecialDrawableBlueprint(e.data.positions, e.data.normals, e.data.colors, e.data.texInfo, e.data.faces));
-      scene.render();
-  }
+  	const gl = canvas.getContext("webgl", {preserveDrawingBuffer: true});
+  	if (!gl) throw Error("Unable to initialize WebGL. Your browser or machine may not support it.");
+	
+  	const scene = new Scene(gl, {unlockRoll: false});
+	const world = new CoordSystem("", [Colors.RED, Colors.GRN, Colors.BLU], mat4.create());
+  	w = new Worker('js/worker_parseply.js');
+  	w.onmessage = e => {
+    		world.add(new SpecialDrawableBlueprint(e.data.positions, e.data.normals, e.data.colors, e.data.texInfo, e.data.faces));
+      		scene.render();
+  	}
+	scene.insert(world);
+	scene.render();
 }
