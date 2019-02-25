@@ -23,7 +23,7 @@ class Scene {
 		this.aspect = gl.canvas.width/gl.canvas.height;
 		this.zNear = 0.1;
 		this.zFar = 100;
-		this.eyePos = vec3.fromValues(0,0,1);
+		this.eyePos = vec3.fromValues(3,3,3);
 		this.lookPos = vec3.fromValues(0,0,0);
 		this.upDir = vec3.fromValues(0,1,0);
 		this.inputState = {mouseDown: false};
