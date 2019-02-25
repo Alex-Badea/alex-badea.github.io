@@ -28,11 +28,12 @@ window.onload = () => {
 	
   	const scene = new Scene(gl, {unlockRoll: false});
 	const world = new CoordSystem("", [vec3.fromValues(1,0,0), vec3.fromValues(0,1,0), vec3.fromValues(0,0,1)], mat4.create());
-  	w = new Worker('js/worker_parseply.js');
-  	w.onmessage = e => {
-    		world.add(new SpecialDrawableBlueprint(e.data.positions, e.data.normals, e.data.colors, e.data.texInfo, e.data.faces));
-      		scene.render();
-  	}
 	scene.insert(world);
 	scene.render();
+	
+	w = new Worker('js/worker_parseply.js');
+  	w.onmessage = e => {
+    		world.add(new SpecialDrawableBlueprint(e.data.positions, e.data.normals, e.data.colors, e.data.texInfo, e.data.faces));
+      		scene.redraw();
+  	}
 }
