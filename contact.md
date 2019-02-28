@@ -13,7 +13,7 @@ If you think we could make a great team for your upcoming software projects or j
   <input type='text' name='name' placeholder='Your Full Name' />
   <input type='email' name='email' placeholder='Your E-mail Address' />
   <br>
-  <textarea name='message' placeholder='1Write your message ...' style="width: 80%; height: 200px"></textarea>
+  <textarea name='message' placeholder='Write your message ...' style="width: 80%; height: 200px"></textarea>
   <br>
   <input type='submit' value='Send Message' />
 </form>
