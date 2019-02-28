@@ -44,7 +44,9 @@ layout: default
             <div class="w3-middle">
               <h5>{{ project.title }}</h5>
               <a class="fa fa-book" href="{{ project.url }}" style="display: inline; color: white; margin-right: 10px;"></a>
+              {% if project.host %}
               <a class="fa fa-github" href="{{ project.host }}" style="display: inline; color: white;  margin-left: 10px;"></a>
+              {% endif %}
             </div>
           </div>
         </div>
