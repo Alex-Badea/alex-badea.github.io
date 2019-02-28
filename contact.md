@@ -9,7 +9,7 @@ If you think we could make a great team for your upcoming software projects or j
 
 <form action="https://getsimpleform.com/messages?form_api_token=8ec05af53da6c16dd1a6ac5a4d8f7a1b" method="post">
   <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
-  <input type='hidden' name='redirect_to' value="{{ site.baseurl }}/thank-you" />
+  <input type='hidden' name='redirect_to' value="https://alex-badea.github.io/thank-you/" />
   <input type='text' name='name' placeholder='Your Full Name' />
   <input type='email' name='email' placeholder='Your E-mail Address' />
   <br>
