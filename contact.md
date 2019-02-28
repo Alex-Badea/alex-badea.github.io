@@ -12,6 +12,6 @@ Bacon ipsum dolor amet filet mignon meatball spare ribs fatback bacon shankle. K
   <input type='hidden' name='redirect_to' value='http://bloc.github.io/portfolio-iro/thank-you/' />
   <input type='text' name='name' placeholder='Your Full Name' />
   <input type='email' name='email' placeholder='Your E-mail Address' />
-  <textarea name='message' placeholder='Write your message ...'></textarea>
+  <textarea name='message' placeholder='Write your message ...' style="width: 80%; height: 400px"></textarea>
   <input type='submit' value='Send Message' />
 </form>
