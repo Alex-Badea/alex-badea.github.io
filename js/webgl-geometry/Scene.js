@@ -38,8 +38,8 @@ class Scene {
 				let frontDir = vec3.normalize(vec3.create(), vec3.negate(vec3.create(), this.eyePos));
 				let leftDir = vec3.normalize(vec3.create(), vec3.cross(vec3.create(), this.upDir, frontDir));
 				
-				const rotLeftMat = mat4.fromRotation(mat4.create(), -deltaX*0.01, this.upDir);
-				const rotUpMat = mat4.fromRotation(mat4.create(), deltaY*0.01, leftDir);
+				const rotLeftMat = mat4.fromRotation(mat4.create(), -deltaX*0.02, this.upDir);
+				const rotUpMat = mat4.fromRotation(mat4.create(), deltaY*0.02, leftDir);
 				this.eyePos = vec3.transformMat4(vec3.create(), this.eyePos, rotLeftMat);
 				this.eyePos = vec3.transformMat4(vec3.create(), this.eyePos, rotUpMat);
 				frontDir = vec3.normalize(vec3.create(), vec3.negate(vec3.create(), this.eyePos));
