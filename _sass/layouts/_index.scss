@@ -71,14 +71,6 @@
 
 .w3-container {
   position: relative;
-  // Prevent that slight jitter
-  -backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);
-  //width: 50%;
-  filter: grayscale(0.2%) brightness(100%) blur(0.12px);
 }
 
 .w3-image {
