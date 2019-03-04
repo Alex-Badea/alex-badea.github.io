@@ -4,7 +4,7 @@ title: Pocket 3DR
 feature-img: "img/sample_feature_img.png"
 thumbnail-path: "https://i.ibb.co/0hLWRjt/68747470733a2f2f692e6962622e636f2f6774327270447a2f4d594d45524d442e706e67.png"
 short-description: 
-
+host: https://github.com/Alex-Badea/Pocket-3DR
 ---
 # Pocket 3DR
 This is a MATLAB library containing the necessary functions in order to implement a fully functional 3D Reconstruction pipeline. The pipeline runs inside the <strong>main.m</strong> script file. 
