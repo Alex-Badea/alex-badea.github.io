@@ -2,8 +2,66 @@
 layout: post
 title: WebGL Geometry
 feature-img: "img/sample_feature_img.png"
-thumbnail-path: "https://camo.githubusercontent.com/a0124c79f73cd20416e8730b21f018d37ef423f1/68747470733a2f2f692e6962622e636f2f4462546b3873532f63706c30312e6a7067"
-short-description: WebGL Geometry for iOS is awesome!
-
+thumbnail-path: "https://i.ibb.co/mc2ZQHQ/Scene-2.png"
+short-description:
+host: https://github.com/Alex-Badea/WebGL-Geometry
 ---
-This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.
+# WebGL Geometry
+This library was originally meant as an auxiliary to an educational project for teaching OpenGL. I figured it would prove useful for those who want to create geometric scenes for educational purposes in an easy way, straight in the browser, without the need for additional dependencies.
+
+### Public classes and methods
+
+- **DrawableBlueprint**: an abstract standalone primitive, not enclosed within a context, containing basic drawing information;
+    - constructor(name[**string**]: name under which the primitive will be displayed, color[**vec3**]).
+- **Point**[extends **DrawableBlueprint**];
+    - constructor(name[**string**], color[**vec3**], position[**vec3**]).    
+- **Segment**[extends **DrawableBlueprint**];
+    - constructor(name[**string**], color[**vec3**], p1[**Point**]: head of segment, p2[**Point**]: tail of segment);
+    - intersect(drawable[**DrawableBlueprint**], name*[**string**]: (optional) name of resulting drawable, color*[**vec3**]: (optional) color of resulting drawable).    
+- **Arrow**[extends **Segment**]: a segment-like primitive but with an arrowhead on the tail;
+- **Vector**[extends **Arrow**]: an arrow-like primitive but with the head always at origin;
+    - constructor(name[**string**], color[**vec3**], p[**Point**]: tail of arrow).
+- **Triangle**[extends **DrawableBlueprint**];
+    - constructor(name[**string**], color[**vec3**], p1[**Point**], p2[**Point**], p3[**Point**]);
+    - intersect(drawable[**DrawableBlueprint**], name*[**string**], color*[**vec3**]).   
+- **CoordSystem**[extends **DrawableBlueprint**]: a container of primitives in which you can add other drawables (including other **CoordSystem**s);
+    - constructor(name[**string**], color[**_array_**]{[**vec3**], [**vec3**], [**vec3**]}: colors of axes, modelMatrix[**mat4**]: homogenous transformation applied to each drawables inside this system in transpose form);
+    - add(...[**DrawableBlueprint _varargs_**]).
+- **SpecialDrawableBlueprint**: a drawable type that allows loading more complex models in the scene, with known vertex positions, colors, normals, texture information and faces;
+    -constructor(positions[**Float32Array**], normals[**Float32Array**], colors[**Float32Array**], texInfo[**_object literal_**]{image[**Image**], coords[**Float32Array**]}, faces[**Uint32Array**]).
+- **PlyModelLoader**: loads .ply model async;
+    - constructor(plyInputId[**string**]: ID of input element where user loads the .ply file, texInputId*[**string**]: (optional) ID of input element where user loads the texture image, onLoad[**Function**]: what is executed after the model loads).
+- **Scene**.
+    - constructor(gl[**WebGLRenderingContext**]: the WebGL drawing context fetched from the _canvas_ element, options[**_object literal_**]{unlockRoll[**Boolean**]: is scene free to rotate around roll axis, depthTest[**Boolean**]});
+    - insert(...[**DrawableBlueprint _varargs_**]);
+    - render();
+    - redraw(): deletes all primitives currently in scene, reinstantiates and redraws them (useful for async operations).
+    
+### Examples
+
+There are also example scenes in the code, inside the _ex\_\*_ folders from which you can copy the _main.html_ and _main.js_ files into the main folder and open the html file in your browser for visualisation. The following are screenshots of the scenes: 
+
+#### ex_spdc
+Example of single primitive, multiple contexts: the cube-like model is drawn twice, once in the canonical coordinate system and once in a coordinate system with an arbitrary rotation, scaling and translation;
+<a href="https://ibb.co/QX4x4Hd"><img src="https://i.ibb.co/JC9S9pQ/Scene-3.png" alt="Scene-3" border="0"></a>
+
+#### ex_dynmodif
+Example of runtime-modified attributes: input sliders have been used to vary the position of points S1 to S12;
+<a href="https://ibb.co/HXG2gSw"><img src="https://i.ibb.co/ZNcJTj4/Scene.png" alt="Scene" border="0"></a>
+
+#### ex_isect
+Example of triangle-segment and triangle-triangle intersection;
+<a href="https://ibb.co/crZfzNz"><img src="https://i.ibb.co/4VXvBjB/Scene-2.png" alt="Scene-2" border="0"></a>
+
+#### ex_epipolar
+A scene that loads .ply models and uses the features mentioned previously to render a more complex view.
+<a href="https://ibb.co/b5TsB7y"><img src="https://i.ibb.co/Zz5B8Nw/Scene-1.png" alt="Scene-1" border="0"></a>
+    
+```diff
++ Can draw names of drawables
++ Supports shared drawable across multiple contexts
++ Easy screenshot utility (on key 'P')
++ Can modify drawable attributes at runtime
++ Can calculate and draw intersections between drawables
+- Low memory footprint and high efficiency
+```
