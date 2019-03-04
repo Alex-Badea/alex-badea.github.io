@@ -2,7 +2,7 @@
 layout: post
 title: WebGL Geometry
 feature-img: "img/sample_feature_img.png"
-thumbnail-path: "https://i.ibb.co/mc2ZQHQ/Scene-2.png"
+thumbnail-path: "https://i.ibb.co/BnYqpg1/68747470733a2f2f692e6962622e636f2f5a7a3542384e772f5363656e652d312e706e67.png"
 short-description:
 host: https://github.com/Alex-Badea/WebGL-Geometry
 ---
