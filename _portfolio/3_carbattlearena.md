@@ -7,7 +7,7 @@ short-description: Unity Car Battle Arena game developed as part of the "Softwar
 host: https://github.com/Alex-Badea/MDS-CarBattleArena
 ---
 # Car Battle Arena
-During my work for this project, I was assigned the tasks of making the car control more realistic, simulating the physics of a real car like drifting and swerving, I've added the weapons and made them functional, implementing the complete shooting mechanics, and I've also made the local two-player mode functional. You may contact me and request the Trello board of the entire project in order to see the entire workflow in detail.
+This project was made by a team of 4 students. During my work for this project, I was assigned the tasks of making the car control more realistic, simulating the physics of a real car like drifting and swerving, I've added the weapons and made them functional, implementing the complete shooting mechanics, and I've also made the local two-player mode functional. You may contact me and request the Trello board of the entire project in order to see the entire workflow in detail.
 
 ### Gameplay
 This is a game for two players playing locally, each with their set of controls: one scheme is **WASD** for moving and **Space** for shooting and the other is **Arrows** for moving and **RCtrl** for shooting. There are 3 cars and 3 weapons you can choose from, each with different stats.
