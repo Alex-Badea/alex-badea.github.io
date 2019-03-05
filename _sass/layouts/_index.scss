@@ -81,6 +81,7 @@
   transition: .5s ease;
   backface-visibility: hidden;
   //border-radius: 25px;
+  transition-timing-function: steps(100, end);
 }
 
 .w3-middle {
