@@ -2,7 +2,7 @@
 layout: post
 title: Pocket 3DR
 feature-img: "img/sample_feature_img.png"
-thumbnail-path: "https://i.ibb.co/0hLWRjt/68747470733a2f2f692e6962622e636f2f6774327270447a2f4d594d45524d442e706e67.png"
+thumbnail-path: "https://i.ibb.co/m6WrNcM/mer.jpg"
 short-description: A MATLAB implementation of a full 3D Reconstruction pipeline for small-scale reconstructions using the functions provided by the Czech Technical University in Prague, Faculty of Electrical Engineering
 host: https://github.com/Alex-Badea/Pocket-3DR
 ---

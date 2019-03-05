@@ -9,6 +9,9 @@ host: https://github.com/Alex-Badea/Arthea
 # Arthea
 Simple art prompts generator that produces random character traits and scenarios for drawing inspiration. This app demonstrates a simple communication between a database and the Android framework.
 
+### Setup
+Open the project in Android Studio, delete *.template* from the *SENSITIVE_DATA.txt.template* file in the *assets* folder, add your database credentials and run. Contact me if you want some demo database credentials.
+
 ### Screenshots
 
 Upon first entering the app, the database contents will be downloaded locally.
