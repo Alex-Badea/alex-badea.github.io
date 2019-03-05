@@ -2,7 +2,7 @@
 layout: post
 title: Car Battle Arena
 feature-img: "img/sample_feature_img.png"
-thumbnail-path: "https://raw.githubusercontent.com/Alex-Badea/3DReconstruction/master/ims/csk07.jpg"
+thumbnail-path: "https://i.ibb.co/8rH1HmK/CBA-2019-03-05-14-01-56-90.png"
 short-description: Unity Car Battle Arena game developed as part of the "Software Development Methods" course
 host: https://github.com/Alex-Badea/MDS-CarBattleArena
 ---
@@ -28,23 +28,24 @@ This is a game for two players playing locally, each with their set of controls:
 #### Weapons
 **Machine gun**: Bullets have high, but constant speed, low damage;
 
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/sP75xTN/gun3.png" width="100" alt="gun3" border="0"></a>
+<a href="https://ibb.co/LYC1tBD"><img src="https://i.ibb.co/ZGhx8vR/gun1.png" width="100" alt="gun1" border="0"></a>
 
 **Raygun**: Rays have low, constant speed, average damage, high attack range that extends gradually;
 
-<a href="https://ibb.co/LYC1tBD"><img src="https://i.ibb.co/ZGhx8vR/gun1.png" width="100" alt="gun1" border="0"></a>
+<a href="https://ibb.co/jTVzgLB"><img src="https://i.ibb.co/f2894CB/gun2.png" width="100" alt="gun2" border="0"></a>
 
 **Rocket launcher**: Rockets have low speed that increases gradually, slight recoil, high damage, applies thrust upon impact.
 
-<a href="https://ibb.co/jTVzgLB"><img src="https://i.ibb.co/f2894CB/gun2.png" width="100" alt="gun2" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/sP75xTN/gun3.png" width="100" alt="gun3" border="0"></a>
 
-*Image credits: http://r4v3-0n.tumblr.com/*
+*Image credits: <a href="http://r4v3-0n.tumblr.com/">r4v3-0n.tumblr.com</a>*
 
 ### Screenshots
+<a href="https://ibb.co/h2HB8dx"><img src="https://i.ibb.co/CVvb09p/CBA-2019-03-05-14-00-33-87.png" alt="CBA-2019-03-05-14-00-33-87" border="0"></a>
+
 <a href="https://ibb.co/48HhHFm"><img src="https://i.ibb.co/8rH1HmK/CBA-2019-03-05-14-01-56-90.png" alt="CBA-2019-03-05-14-01-56-90" border="0"></a>
 
 <a href="https://ibb.co/DLvrV3x"><img src="https://i.ibb.co/FnyHxGS/CBA-2019-03-05-14-04-24-02.png" alt="CBA-2019-03-05-14-04-24-02" border="0"></a>
 
 <a href="https://ibb.co/kK5nxs5"><img src="https://i.ibb.co/LSYw8XY/CBA-2019-03-05-14-07-12-01.png" alt="CBA-2019-03-05-14-07-12-01" border="0"></a>
 
-<a href="https://ibb.co/h2HB8dx"><img src="https://i.ibb.co/CVvb09p/CBA-2019-03-05-14-00-33-87.png" alt="CBA-2019-03-05-14-00-33-87" border="0"></a>
