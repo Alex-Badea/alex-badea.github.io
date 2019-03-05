@@ -2,7 +2,7 @@
 layout: post
 title: DogEspace
 feature-img: "img/sample_feature_img.png"
-thumbnail-path: "https://i.ibb.co/bjhKvcG/2.jpg"
+thumbnail-path: "https://i.ibb.co/zrPV7nP/layla.jpg"
 short-description: A social network-type website for your furry friend developed as part of the "Software Engineering" course
 host: # CLOSED SOURCE!
 ---
