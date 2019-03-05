@@ -3,7 +3,7 @@ layout: post
 title: Arthea
 feature-img: "img/sample_feature_img.png"
 thumbnail-path: "https://i.ibb.co/mcJpkQN/68747470733a2f2f692e6962622e636f2f7247335a6b74682f53637265656e73686f742d32303139303330342d3232323834302e706e67.png"
-short-description: 
+short-description: Simple art prompts generator that produces random character traits and scenarios for drawing inspiration
 host: https://github.com/Alex-Badea/Arthea
 ---
 # Arthea

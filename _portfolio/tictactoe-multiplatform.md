@@ -2,12 +2,12 @@
 layout: post
 title: Tic-Tac-Toe Multiplatform
 feature-img: "img/sample_feature_img.png"
-thumbnail-path: "https://i.ibb.co/jrhZ63N/6.png"
-short-description: 
+thumbnail-path: "https://i.ibb.co/g7yZ7Wp/TTT.png"
+short-description: A TicTacToe game Tomcat server with Web and Swing clients
 host: https://github.com/Alex-Badea/TicTacToe-Multiplatform
 ---
 # TicTacToe-Multiplatform
-A TicTacToe game Tomcat server with Web and Swing clients that serves as an educational tool for those who want to set up a tomcat server that manages a session among two or more players.
+A TicTacToe game Tomcat server with Web and Swing clients that serves as an educational tool for those who want to set up a Tomcat server that manages a session among two or more players.
 
 ### Setup
 **Web**: Open the project in IntelliJ Ultimate, select **a Java 1.8 SDK** as the project is not compatible with higher versions, then delete *.template* from the *SENSITIVE_DATA.txt.template* file, add your database credentials and deploy. Contact me if you want some demo database credentials. Tomcat, Jersey and the JDBC Driver are already provided in the *lib* folder.
