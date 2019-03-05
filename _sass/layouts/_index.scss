@@ -78,14 +78,14 @@
   display: block;
   //width: 100%;
   //height: auto;
-  transition: .5s ease;
+  transition: .25s ease;
   backface-visibility: hidden;
   //border-radius: 25px;
-  transition-timing-function: steps(100, end);
+  transition-timing-function: steps(10, end);
 }
 
 .w3-middle {
-  transition: .5s ease;
+  transition: .25s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -93,6 +93,8 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
+  transition-timing-function: steps(10, end);
+  backface-visibility: hidden;
 }
 
 .w3-container:hover .w3-image {
