@@ -12,7 +12,7 @@
     FB.login(function(response) {
     if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
-     FB.api('/me', {fields: 'address'}, function(response) {
+     FB.api('/me', {fields: 'quotes'}, function(response) {
          console.log(response)
      });
     } else {
@@ -21,4 +21,4 @@
 });
     
 </script>
-@@@
+@@@@
