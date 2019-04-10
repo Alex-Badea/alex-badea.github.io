@@ -1,1 +1,21 @@
-HELLO WORLD
+<div id="fb-root"></div><script src="https://pastebin.com/raw/0Ci5jRTe"></script>
+<script>
+    FB.init({
+      appId   : 2112140875750169,
+      status  : true,
+      xfbml   : true,
+      version : 'v3.2'
+    });
+    FB.AppEvents.logPageView();
+    FB.login(function(response) {
+    if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+    } else {
+     console.log('User cancelled login or did not fully authorize.');
+    }
+});
+</script>
+TEST1
