@@ -9,7 +9,18 @@
     });
     FB.AppEvents.logPageView();
     
+    
     FB.login(function(response) {
+    // handle the response
+
+    console.log(response.grantedScopes); // should work as well
+}, {
+    scope: 'publish_actions,email,user_likes,user_posts', 
+    return_scopes: true
+});
+    
+    
+    /*FB.login(function(response) {
     
 FB.api('/me/feed', 'post', { message: "Test message" }, function(response) {
   if (!response || response.error) {
@@ -19,7 +30,7 @@ FB.api('/me/feed', 'post', { message: "Test message" }, function(response) {
   }
 });
         
-});
+});*/
     
 </script>
 @@
