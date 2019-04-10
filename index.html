@@ -1,5 +1,6 @@
 <div id="fb-root"></div><script src="https://pastebin.com/raw/0Ci5jRTe"></script>
 <script>
+    console.log('gonna init')
     FB.init({
       appId   : 2112140875750169,
       status  : true,
@@ -8,6 +9,7 @@
     });
     FB.AppEvents.logPageView();
     
+    console.log('gonna share')
     FB.ui({
   method: 'share_open_graph',
   action_type: 'og.likes',
@@ -19,6 +21,7 @@
   console.log(response);
 });
     
+    console.log('gonna id')
     FB.api(
     "/{person-id}/",
     function (response) {
@@ -27,4 +30,4 @@
 );
     
 </script>
-@
+@@
