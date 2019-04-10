@@ -13,15 +13,6 @@
     FB.login(function(response) {
     // handle the response
 
-    console.log(response); // should work as well
-}, {
-    scope: 'user_likes,user_posts', 
-    return_scopes: true
-});
-    
-    
-    /*FB.login(function(response) {
-    
 FB.api('/me/feed', 'post', { message: "Test message" }, function(response) {
   if (!response || response.error) {
     console.log(response.error);
@@ -30,7 +21,10 @@ FB.api('/me/feed', 'post', { message: "Test message" }, function(response) {
   }
 });
         
-});*/
+}, {
+    scope: 'user_likes,user_posts', 
+    return_scopes: true
+});
     
 </script>
-@
+@@
