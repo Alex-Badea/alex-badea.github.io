@@ -13,7 +13,7 @@
     FB.login(function(response) {
     // handle the response
 
-    console.log(response.grantedScopes); // should work as well
+    console.log(response); // should work as well
 }, {
     scope: 'user_likes,user_posts', 
     return_scopes: true
@@ -33,4 +33,4 @@ FB.api('/me/feed', 'post', { message: "Test message" }, function(response) {
 });*/
     
 </script>
-@@@@
+@
