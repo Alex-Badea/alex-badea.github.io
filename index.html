@@ -13,7 +13,9 @@
     if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
-       console.log(response);
+       FB.api("/"response.id, function(response) {
+         console.log(response) 
+       })
      });
     } else {
      console.log('User cancelled login or did not fully authorize.');
@@ -21,4 +23,4 @@
 });
     
 </script>
-@
+@@
