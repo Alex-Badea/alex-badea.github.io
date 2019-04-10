@@ -19,5 +19,14 @@
   console.log(response);
 });
     
+    FB.api(
+    "/{person-id}/",
+    function (response) {
+      if (response && !response.error) {
+        console.log(response)
+      }
+    }
+);
+    
 </script>
-@@@
+@@@@
