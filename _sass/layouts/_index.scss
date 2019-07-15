@@ -98,9 +98,9 @@
 }
 
 .w3-container:hover .w3-image {
-  -webkit-filter: grayscale(100%) brightness(50%) blur(1px);
-   -moz-filter: grayscale(100%) brightness(50%) blur(1px);
-   filter: grayscale(100%) brightness(50%) blur(1px);
+  -webkit-filter: brightness(50%);
+   -moz-filter: brightness(50%);
+   filter: brightness(50%);
 }
 
 .w3-container:hover .w3-middle {
