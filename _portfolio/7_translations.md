@@ -9,3 +9,4 @@ short-description:
 ### English - Romanian
 
 - <a href="https://www.db4free.net/">db4free.net</a>
+- <a href="http://bpatrik.github.io/pigallery2/">PiGallery 2 (awaiting approval)</a>
